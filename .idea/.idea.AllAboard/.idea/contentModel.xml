@@ -8,7 +8,7 @@
         <e p="AllAboard.csproj" t="IncludeRecursive" />
         <e p="DockingPortEvents.cs" t="Include" />
         <e p="ModuleDockingPortAirlock.cs" t="Include" />
-        <e p="ModuleDockingPortAirlockEVA.cs" t="Include" />
+        <e p="ModuleDockingPortAirlockEva.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
       </e>

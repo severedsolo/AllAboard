@@ -1,12 +1,15 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
 
 namespace AllAboard
 {
-    public class ModuleDockingPortAirlockEVA : PartModule
+    public class ModuleDockingPortAirlockEva : PartModule
     {
         private ModuleDockingPortAirlock airlock;
+        private bool isAirlockNull = true;
+
         private void Start()
         {
             DockingPortEvents.OnDockingPortReadyToBoard.Add(RegisterDockingPort);
@@ -18,29 +21,35 @@ namespace AllAboard
         {
             if (firingAirlock != airlock) return;
             airlock = null;
+            isAirlockNull = true;
             Debug.Log("[DockingPortEntry]: ModuleDockingPortAirlockEVA : Unregistered port");
         }
 
         private void RegisterDockingPort(ModuleDockingPortAirlock firingAirlock)
         {
             airlock = firingAirlock;
+            isAirlockNull = false;
             Debug.Log("[DockingPortEntry]: ModuleDockingPortAirlockEVA : Registered Port");
         }
 
         private void FixedUpdate()
         {
-            if (airlock == null) return;
-            if(Input.GetKeyDown(KeyCode.B))
+            if (isAirlockNull) return;
+            if (!Input.GetKeyDown(KeyCode.B)) return;
+            if (!airlock.readyToReceive || !airlock.InRange(vessel.evaController)) return;
+            if (!airlock.HasCapacity())
             {
-                if (!airlock.readyToReceive) return;
-                if (airlock.PartWithCapacity() == null)
-                {
-                    Debug.Log("[DockingPortEntry]: Board aborted - no parts with capacity");
-                    return;
-                }
-                Debug.Log("[DockingPortEntry]: Boarding Kerbal");
-                vessel.evaController.BoardPart(airlock.PartWithCapacity());
+                Debug.Log("[DockingPortEntry]: Board aborted - no parts with capacity");
+                return;
             }
+            Debug.Log("[DockingPortEntry]: Boarding Kerbal");
+            vessel.evaController.BoardPart(airlock.PartWithCapacity());
+        }
+
+        private void OnDisable()
+        {
+            DockingPortEvents.OnDockingPortReadyToBoard.Remove(RegisterDockingPort);
+            DockingPortEvents.OnDockingPortPortUnreadyToBoard.Remove(UnregisterDockingPort);
         }
     }
 }
