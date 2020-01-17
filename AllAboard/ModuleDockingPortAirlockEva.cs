@@ -1,7 +1,4 @@
-using System;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
 
 namespace AllAboard
 {
@@ -39,9 +36,11 @@ namespace AllAboard
             if (!airlock.readyToReceive || !airlock.InRange(vessel.evaController)) return;
             if (!airlock.HasCapacity())
             {
+                // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
                 Debug.Log("[DockingPortEntry]: Board aborted - no parts with capacity");
                 return;
             }
+            // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
             Debug.Log("[DockingPortEntry]: Boarding Kerbal");
             vessel.evaController.BoardPart(airlock.PartWithCapacity());
         }

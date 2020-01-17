@@ -1,8 +1,5 @@
-using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Expansions.Missions;
-using Expansions.Missions.Adjusters;
-using PreFlightTests;
 using UnityEngine;
 
 namespace AllAboard
@@ -10,10 +7,12 @@ namespace AllAboard
     public class ModuleDockingPortAirlock : PartModule
     {
         [KSPField(isPersistant = true, guiActive = false)]
-        public float range = 10.0f;
+        public float range = 1.0f;
         [KSPField(isPersistant = true, guiActive = false)]
         public string hatchDirection = "down";
-        public bool readyToReceive = false;
+        public bool readyToReceive;
+        
+        [SuppressMessage("ReSharper", "Unity.PerformanceCriticalCodeNullComparison")]
         private void FixedUpdate()
         {
             if (FlightGlobals.ActiveVessel == null || FlightGlobals.ActiveVessel.evaController == null) return;

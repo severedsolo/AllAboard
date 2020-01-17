@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3bd5b44-da87-4fbf-917a-61c225ead496" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AllAboard/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllAboard/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AllAboard/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllAboard/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AllAboard/AllAboard.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AllAboard/AllAboard.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AllAboard/DockingPortEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AllAboard/DockingPortEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlockEVA.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlockEva.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlockEva.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlockEva.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/AllAboard/DockingPortEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlockEva.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -25,6 +25,7 @@
       <list>
         <option value="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlockEVA.cs" />
         <option value="$PROJECT_DIR$/AllAboard/AllAboard.csproj" />
+        <option value="$PROJECT_DIR$/AllAboard/DockingPortEvents.cs" />
         <option value="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlockEva.cs" />
         <option value="$PROJECT_DIR$/AllAboard/ModuleDockingPortAirlock.cs" />
       </list>
@@ -84,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579197073939</updated>
-      <workItem from="1579197075538" duration="3514000" />
+      <workItem from="1579197075538" duration="5385000" />
     </task>
     <servers />
   </component>
